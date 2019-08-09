@@ -1,0 +1,35 @@
+<Configuration>
+  <Name>Shipping Notification Addon</Name>
+  <Author>Austin Smith, University of Maryland Libraries</Author>
+  <Version>1.2</Version>
+  <Active>true</Active>
+  <Type>Server</Type>
+  <Description>Sends notifications for loans in Request Sent which have a due date assigned. Also adds a n</Description>
+  <Settings>
+    <Setting name="DeferProcessing" value="false" type="boolean">
+	  <Description>If true, will only process requests betwee 11PM and Midnight.</Description>
+	</Setting>
+    <Setting name="SendEmail" value="false" type="boolean">
+	  <Description>Specifies whether or not an email notification should be sent when an item is shipped.</Description>
+	</Setting>
+    <Setting name="EmailName" value="BorrowingLoanShipped" type="string">
+      <Description>Name of the notification template to use.</Description>
+    </Setting>
+	<Setting name="ItemField" value="ItemInfo5" type="string">
+	  <Description>Name of the Transaction field to store the Shipped date in.</Description>
+	</Setting>
+  <Setting name="AddShortLoanPeriodNote" value="false" type="boolean">
+    <Description>If true, a message will be added to Special Instructions for items with short due dates.</Description>
+  </Setting>
+  <Setting name="ShortLoanPeriod" value="56" type="string">
+    <Description>Defines the loan period which will trigger the ShortLoanPeriodNote</Description>
+  </Setting>
+  <Setting name="ShortLoanPeriodNote" value="Subject to Recall" type="string">
+    <Description>Text that will be added to the Special Instructions field for items with short loan periods.</Description>
+  </Setting>
+  </Settings>
+  <Forms />
+  <Files>
+    <File>Code.lua</File>
+  </Files>
+</Configuration>
